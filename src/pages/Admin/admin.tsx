@@ -110,75 +110,14 @@ const AdminDashboard = () => {
               margin-bottom: 15px;
               padding-bottom: 5px;
               border-bottom: 1px solid #e2e8f0;
-            }
-            .metrics-grid {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 20px;
-              margin-bottom: 30px;
-            }
-            .metric-card {
-              background: #f8fafc;
-              padding: 15px;
-              border-radius: 8px;
-              border: 1px solid #e2e8f0;
-            }
-            .metric-title {
-              font-weight: bold;
-              color: #4a5568;
-              margin-bottom: 5px;
-            }
-            .metric-value {
-              font-size: 24px;
-              color: #2d3748;
-              margin-bottom: 5px;
+           
             }
             .metric-subtext {
               font-size: 12px;
               color: #718096;
             }
-            table {
-              width: 100%;
-              border-collapse: collapse;
-              margin-bottom: 20px;
-              font-size: 14px;
-            }
-            th {
-              background: #f8fafc;
-              padding: 12px;
-              text-align: left;
-              font-weight: bold;
-              color: #4a5568;
-              border-bottom: 2px solid #e2e8f0;
-            }
-            td {
-              padding: 12px;
-              border-bottom: 1px solid #e2e8f0;
-            }
-            .status-badge {
-              display: inline-block;
-              padding: 4px 8px;
-              border-radius: 12px;
-              font-size: 12px;
-              font-weight: 500;
-            }
-            .status-pending {
-              background: #fef3c7;
-              color: #92400e;
-            }
-            .status-approved {
-              background: #dcfce7;
-              color: #166534;
-            }
-            @media print {
-              body {
-                margin: 20px;
-              }
-              .no-break {
-                break-inside: avoid;
-              }
-            }
-          </style>
+         
+        
         </head>
         <body>
           <div class="header">
@@ -219,19 +158,7 @@ const AdminDashboard = () => {
                 <div class="metric-value">${statusCounts.disapproved}</div>
                 <div class="metric-subtext">Not approved</div>
               </div>
-            </div>
-          </div>
-
-          <div class="section no-break">
-            <h2 class="section-title">Recent Registrations</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Customer</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                </tr>
+      
               </thead>
               <tbody>
                 ${pendingRegistrations.map(reg => `
@@ -243,19 +170,7 @@ const AdminDashboard = () => {
                   </tr>
                 `).join('')}
               </tbody>
-            </table>
-          </div>
-
-          <div class="section no-break">
-            <h2 class="section-title">Recent Approved Registrations</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Customer</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                </tr>
+          
               </thead>
               <tbody>
                 ${approvedRegistrations.map(reg => `
@@ -266,10 +181,7 @@ const AdminDashboard = () => {
                     <td><span class="status-badge status-approved">${reg.status}</span></td>
                   </tr>
                 `).join('')}
-              </tbody>
-            </table>
-          </div>
-        </body>
+      
       </html>
     `;
 
